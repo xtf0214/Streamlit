@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+
+# import matplotlib.pyplot as plt
 import json
 
 
@@ -21,22 +22,24 @@ data = load_data("./out/user_learning_statistics.json")
 userId = st.selectbox(label="Please input userId", options=data["userId_list"])
 userId = str(userId)
 
-pie, bar = st.tabs(['pie', 'bar'])
+pie, bar = st.tabs(["pie", "bar"])
 
-pie.markdown('## learning type')
-total = sum(data['user_learning_type'][userId].values())
+pie.markdown("## learning type")
+total = sum(data["user_learning_type"][userId].values())
 if total > 0:
-    fig, ax = plt.subplots()
-    ax.pie(
-        data["user_learning_type"][userId].values(),
-        labels=data["user_learning_type"][userId].keys(),
-        autopct=lambda p: f"{p:.1f}%  ({p * total / 100:.0f})"
-    )
-    ax.legend()
-    pie.pyplot(fig)
+    # fig, ax = plt.subplots()
+    # ax.pie(
+    #     data["user_learning_type"][userId].values(),
+    #     labels=data["user_learning_type"][userId].keys(),
+    #     autopct=lambda p: f"{p:.1f}%  ({p * total / 100:.0f})"
+    # )
+    # ax.legend()
+    # pie.pyplot(fig)
+    df = pd.Series(data["user_learning_type"][userId])
+    pie.bar_chart(df)
 else:
-    pie.markdown('### record not found')
+    pie.markdown("### record not found")
 
-bar.markdown('## learning record')
-df = pd.DataFrame(data['user_learning_record'][userId], columns=['LearnedTime'])
+bar.markdown("## learning record")
+df = pd.Series(data["user_learning_record"][userId])
 bar.bar_chart(df)
