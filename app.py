@@ -1,28 +1,19 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Hello",
+    page_title="欢迎来到在线教育大数据分析平台",
     page_icon="👋",
 )
 
-st.write("# Welcome to Streamlit! 👋")
-
-st.sidebar.success("Select a demo above.")
+st.write("# 欢迎来到在线教育大数据分析平台")
 
 st.markdown(
     """
-    Streamlit is an open-source app framework built specifically for
-    Machine Learning and Data Science projects.
-    **👈 Select a demo from the sidebar** to see some examples
-    of what Streamlit can do!
-    ### Want to learn more?
-    - Check out [streamlit.io](https://streamlit.io)
-    - Jump into our [documentation](https://docs.streamlit.io)
-    - Ask a question in our [community
-        forums](https://discuss.streamlit.io)
-    ### See more complex demos
-    - Use a neural net to [analyze the Udacity Self-driving Car Image
-        Dataset](https://github.com/streamlit/demo-self-driving)
-    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-"""
+    教育大数据分析系统可以帮助在线教育平台对学习对象、学习内容和学习质 量等进行分析。
+    """
+)
+st.markdown(
+    """ 
+通过借助平台数据，教育机构可为讲师提供课程质量反馈信息以提升教学效果；帮助班主任实时掌握班级学生学习情况并进行预警，及时调整教学策略，定制个性化学习方案；同时教育机构能够根据线上课程使用情况优化资源配置，从而提供更加精准和有效的教育服务。
+     """
 )
